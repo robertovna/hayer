@@ -1,0 +1,10 @@
+
+<% i=1 %>
+<article class="articles">
+  <% @kitchens.each do |k| %>
+    <%= i %>
+    <%=link_to k.name, k %>
+    <% i+=1 %>
+    <br>
+  <%end %>
+</article>

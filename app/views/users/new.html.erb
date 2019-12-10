@@ -1,0 +1,18 @@
+<h2>Регистрация</h2>
+<%= form_for :users, url: new_user_path do |f|%>
+  <p>
+    Название<br>
+  </p>
+  <p>
+    Логин<br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    Имя<br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit('Сохранить') %>
+  </p>
+<%end %>

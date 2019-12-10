@@ -1,0 +1,12 @@
+
+<% i=1 %>
+<article class="articles">
+  <% @traditions.each do |t| %>
+    <%= i %>
+    <%=link_to t.name, t %>
+    <% i+=1 %>
+    <br>
+  <%end %>
+</article>
+
+

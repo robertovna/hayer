@@ -1,0 +1,10 @@
+
+<article class="articles">
+  <% i=1 %>
+  <% @proverbs.each do |p| %>
+    <%= i.to_s + ".  " %>
+    <%=p.content %>
+    <br>
+    <% i+=1 %>
+  <%end %>
+</article>

@@ -1,0 +1,10 @@
+
+<% i=1 %>
+<article class="articles">
+  <% @books.each do |b| %>
+    <%= i %>
+    <%=link_to b.name, b %>
+    <% i+=1 %>
+    <br>
+  <%end %>
+</article>

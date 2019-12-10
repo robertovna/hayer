@@ -1,0 +1,18 @@
+<h2>Предложение для добавления нового поста</h2>
+<%= form_for :suggestions, url: new_suggestion_path do |f|%>
+  <p>
+    Название<br>
+  </p>
+  <p>
+    Название<br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    Текст статьи<br>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.submit('Сохранить') %>
+  </p>
+<%end %>
