@@ -6,4 +6,5 @@ class TraditionsController < ApplicationController
   def index
     @traditions = Tradition.all.order(:created_at)
   end
+
 end
