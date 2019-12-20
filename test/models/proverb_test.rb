@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ProverbTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "empty content" do
+    assert_equal false, Proverb.create(content: nil).valid?
+  end
 end

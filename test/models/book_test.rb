@@ -4,18 +4,16 @@ class BookTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-=begin
+
   test "empty author" do
     assert_equal false, Book.create(author: nil, content: 'scontent', name: 'sname').valid?
   end
 
-
   test "empty content" do
-    assert !Book.create(author: 'sauthor', content: nil, name: 'sname')
+    assert_equal false, Book.create(author: 'sauthor', content: nil, name: 'sname').valid?
   end
 
   test "empty name" do
-    assert !Book.create(author: 'sauthor', content: 'scontent', name: nil)
+    assert_equal false, Book.create(author: 'sauthor', content: 'scontent', name: nil).valid?
   end
-=end
 end

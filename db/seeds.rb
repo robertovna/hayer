@@ -383,4 +383,5 @@ History.create(name: 'Начало правления Ашота III Милос�
 'Мушегу, которому также предоставил царский титул. Впоследствии наличие двух'\
 ' царств Багратуни явилось одной из причин упадка Армении.',
                event_date: '953', location: '')
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'password',
+                  password_confirmation: 'password') if Rails.env.development?

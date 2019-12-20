@@ -5,7 +5,7 @@ class CreateSuggestions < ActiveRecord::Migration[6.0]
       t.text :content, null: false
       t.string :type, null: false
 
-      add_reference('users', 'id')
+      t.references :user
       t.timestamps
     end
   end

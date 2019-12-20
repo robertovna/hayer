@@ -42,36 +42,29 @@ ActiveRecord::Schema.define(version: 2019_12_17_074713) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "name"
-    t.string "author"
-    t.string "genre"
-    t.text "content"
+    t.string "name", null: false
+    t.string "author", null: false
+    t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "chats", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "id_id"
-    t.index ["id_id"], name: "index_chats_on_id_id"
   end
 
   create_table "histories", force: :cascade do |t|
-    t.string "name"
-    t.string "content"
-    t.date "event_date"
+    t.string "name", null: false
+    t.string "content", null: false
+    t.string "event_date"
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "images", force: :cascade do |t|
-    t.string "url"
-    t.string "table_name"
+    t.string "url", null: false
+    t.string "imageable_type", null: false
+    t.bigint "imageable_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -83,72 +76,56 @@ ActiveRecord::Schema.define(version: 2019_12_17_074713) do
   end
 
   create_table "kitchens", force: :cascade do |t|
-    t.string "name"
-    t.text "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.text "content"
+    t.string "name", null: false
+    t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "people", force: :cascade do |t|
-    t.string "name"
-    t.text "content"
+    t.string "name", null: false
+    t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "proverbs", force: :cascade do |t|
-    t.text "content"
+    t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sights", force: :cascade do |t|
-    t.string "name"
-    t.text "content"
+    t.string "name", null: false
+    t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "suggestions", force: :cascade do |t|
-    t.string "name"
-    t.text "content"
-    t.string "table_name"
+    t.string "name", null: false
+    t.text "content", null: false
+    t.string "type", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "themes", force: :cascade do |t|
-    t.string "table_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_suggestions_on_user_id"
   end
 
   create_table "traditions", force: :cascade do |t|
-    t.string "name"
-    t.text "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "user_chats", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "login"
-    t.string "password"
-    t.string "role"
+    t.string "login", null: false
+    t.string "password", null: false
+    t.string "name", null: false
+    t.string "role", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "id_id"
-    t.index ["id_id"], name: "index_users_on_id_id"
   end
 
 end

@@ -10,7 +10,7 @@ class SuggestionsController < ApplicationController
 
   private
   def post_params
-    params.require(:suggestion).permit(:name, :content)
+    params.require(:suggestion).permit(:name, :content, :type)
   end
 
 end
