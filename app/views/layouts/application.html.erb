@@ -11,20 +11,11 @@
 
   <body>
   <header>
-    <nav>
       <div class="logo">
         <%=link_to image_tag("logo.png", :alt => ""), root_path %></div>
-      <ul class="menu1">
-        <li>
-          <a href="#">Вход</a>
-        </li>
-        <li>
-          <a href="#">Регистрация</a>
-        </li>
-      </ul>
-    </nav>
   </header>
-  <section class="themes">
+
+  <div class="themes">
     <nav>
       <ul class="menu">
         <li>
@@ -53,9 +44,10 @@
         </li>
       </ul>
     </nav>
-  </section>
+  </div>
+  <div class="container">
       <%= yield %>
-
+  </div>
       <p class="notice" ><%= notice %></p>
       <p class="alert" ><%= alert %></p>
   </body>
