@@ -1,10 +1,18 @@
 
 <article class="articles">
-  <% i=1 %>
-  <% @proverbs.each do |p| %>
-    <%= i.to_s + ".  " %>
-    <%=p.content %>
-    <br>
-    <% i+=1 %>
-  <%end %>
+  <div class="row">
+    <div class="mx-auto">
+      <% @proverbs.each do |t| %>
+        <!-- Timeline -->
+        <ul class="timeline">
+          <li class="timeline-item1">
+
+            <div class="timeline-arrow"></div>
+              <h3 class="h2-c"><%=t.content %></h3>
+          </li>
+        </ul>
+      <%end %>
+    </div>
+  </div>
 </article>
+

@@ -1,10 +1,14 @@
-
-<article class="article">
-  <%= @history.name %>
-  <br>
-  <%= @history.event_date %>
-  <br>
-  <%= @history.content %>
-
-</article>
-
+<div class="art">
+  <div class="bl1">
+    <h2 class="name_article"><%= @history.name %></h2>
+    <span class="text-gray"><%=@history.created_at.strftime("%d %B, %Y") %></span>
+    <br>
+    <h6 class="text_article"><%= @history.content %></h6>
+  </div>
+  <div class="bl2">
+    <% if @history.images.present? %>
+      <%=image_tag(@history.images.first.url, {:style => "width: 550px;"}) %>
+    <% end %>
+  </div>
+  <div class="bl3"> </div>
+</div>

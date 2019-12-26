@@ -1,6 +1,14 @@
-
-<article class="article">
-  <%= @kitchen.name %>
-  <br>
-  <%= @kitchen.content %>
-</article>
+<div class="art">
+  <div class="bl1">
+    <h2 class="name_article"><%= @kitchen.name %></h2>
+    <span class="text-gray"><%=@kitchen.created_at.strftime("%d %B, %Y") %></span>
+    <br>
+    <h6 class="text_article"><%= @kitchen.content %></h6>
+  </div>
+  <div class="bl2">
+    <% if @kitchen.images.present? %>
+      <%=image_tag(@kitchen.images.first.url, {:style => "width: 550px;"}) %>
+    <% end %>
+  </div>
+  <div class="bl3"> </div>
+</div>

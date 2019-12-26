@@ -1,7 +1,14 @@
-
-<% i=1 %>
-<article class="articles">
-  <%= @person.name %>
-  <br>
-  <%= @person.content %>
-</article>
+<div class="art">
+  <div class="bl1">
+    <h2 class="name_article"><%= @person.name %></h2>
+    <span class="text-gray"><%=@person.created_at.strftime("%d %B, %Y") %></span>
+    <br>
+    <h6 class="text_article"><%= @person.content %></h6>
+  </div>
+  <div class="bl2">
+    <% if @person.images.present? %>
+      <%=image_tag(@person.images.first.url, {:style => "width: 550px;"}) %>
+    <% end %>
+  </div>
+  <div class="bl3"> </div>
+</div>

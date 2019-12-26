@@ -1,7 +1,14 @@
-
-<article class="article">
-  <h3 class="name_article"><%= @tradition.name %></h3>
-  <br>
-  <%= @tradition.content %>
-  <div class="empty"></div>
-</article>
+<div class="art">
+  <div class="bl1">
+    <h2 class="name_article"><%= @tradition.name %></h2>
+    <span class="text-gray"><%=@tradition.created_at.strftime("%d %B, %Y") %></span>
+    <br>
+    <h6 class="text_article"><%= @tradition.content %></h6>
+  </div>
+  <div class="bl2">
+    <% if @tradition.images.present? %>
+      <%=image_tag(@tradition.images.first.url, {:style => "width: 550px;"}) %>
+    <% end %>
+  </div>
+  <div class="bl3"> </div>
+</div>

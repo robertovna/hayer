@@ -1,10 +1,24 @@
 
-<% i=1 %>
 <article class="articles">
-  <% @people.each do |p| %>
-    <%= i %>
-    <%=link_to p.name, p %>
-    <% i+=1 %>
-    <br>
-  <%end %>
+  <div class="row">
+    <div class="mx-auto">
+      <% @people.each do |t| %>
+        <!-- Timeline -->
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="block1">
+              <div class="timeline-arrow"></div>
+              <h2 class="h2-cl"><%=link_to t.name, t, {style:"text-decoration: none;",:class => "name_article1"} %></h2>
+              <span class="small_text-gray"><%=t.created_at.strftime("%d %B, %Y") %></span></div>
+            <div class="block2">
+              <% if t.images.present? %>
+                <%=image_tag(t.images.first.url, {:style => "width: 300px;"} ) %>
+              <% end %>
+            </div>
+        </ul>
+        </li>
+        </ul>
+      <%end %>
+    </div>
+  </div>
 </article>
